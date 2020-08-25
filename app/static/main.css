@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Font';
+    src: url('/static/fonts/font.ttf');
+  }
+  @font-face {
+    font-family: 'quicksand';
+    src: url('/static/fonts/quicksand.ttf');
+  }
+  @font-face {
+    font-family: 'Font2';
+    src: url('/static/fonts/f2.ttf');
+  }
+  @font-face {
+    font-family: 'Font3';
+    src: url('/static/fonts/f3.ttf');
+  }
+  
+  @media (min-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+  }
+  @media (min-width:400px){
+  .global-search {
+  padding: 20px 0;
+  text-align:center;
+  }
+  body {
+  /* padding-top: 15%; */
+  padding-bottom: 15px;
+  }
+  .global-search {
+  text-align:center;
+  padding:10px;
+  }
+  /* .global-search .form-control {
+  width:500px;
+  } */
+  .global-search * {
+  display:inline-block;
+  margin-bottom:0;
+  }
+  .topcorner{
+  position:absolute;
+  top:2%;
+  right:2%;
+  }
+  .step-links a{
+  color: rgb(255, 255, 255);
+  }
+  
+  
+  p #name {
+    font-weight: bold;
+  }
+  .address {
+    font-style: italic;
+  }
+  
+  html,
+  body {
+  height: 100%;
+  position: relative;
+  }
+  
+  .main {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+  }
+  div.footer{
+    text-align: center;
+  }
+  

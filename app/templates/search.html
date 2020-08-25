@@ -1,0 +1,144 @@
+<html>
+
+<div class="main">
+
+    <head>
+        <!-- <link rel="stylesheet" href="/static/main.css"> -->
+        <link rel="stylesheet" href="/static/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/main.css">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <br><br><br><br><br><br><br><br>
+
+    <body>
+        <!-- <div class="topcorner">
+        <p>Project Name: {{ name }}</p>
+        <p>Student Name: ({{ netid }})</p>
+    </div> -->
+        <form class="form-inline global-search">
+            <h1 class="text">
+                <span style="font-size: 45px; ">W</span>
+                <span style="font-size: 45px; ">h</span>
+                <span style="font-size: 45px; ">a</span>
+                <span style="font-size: 45px; ">t</span>
+                <span style="font-size: 45px; ">T</span>
+                <span style="font-size: 45px; ">o</span>
+                <span style="font-size: 55px; font-style: italic;">E</span>
+                <span style="font-size: 55px; font-style: italic;">a</span>
+                <span style="font-size: 55px; font-style: italic;">t</span>
+            </h1>
+            <br>
+            <h4 id="header2" style="font-family: 'quicksand_bold'; color: rgb(255, 255, 255); text-align: center">
+                in Montréal
+            </h4>
+
+            <br><br><br>
+
+            <div class="form-group">
+                <input type="text" name="search" class="form-control" placeholder="What are you craving?" size="40">
+            </div>
+            <br><br>
+            <div class="form-group">
+                <h4 class="text">Any Allergies or Dislikes? </h4> <br><br>
+                <input type="text" name="search2" class="form-control" placeholder="Ex: Eggs, Peanuts, etc." size="40">
+            </div>
+            <br><br>
+            <button style="font-family: 'quicksand_bold'; color: rgb(255, 255, 255)" type="submit" class="btn btn-info">
+                Go!
+            </button>
+        </form>
+
+        <form class="form-inline global-search">
+            <h3 class="text">
+                {{output_message}}</h3>
+            <br><br><br>
+            <div id="row">
+                {% if data %}
+                <div class="col" style="border-radius: 15px;">
+                    <h3 class="text" style="text-decoration: underline; color: rgb(90, 43, 22);">
+                        Restaurants</h3>
+                    {% for d in data %}
+                    <br><br>
+                    <h4 class="text" style="text-decoration: underline;">
+                        {{d.name}}</h4>
+                    <br>
+                    <h5 class="text"><i>{{d.address}}</i></h5>
+                    <br>
+                    <p class="text">Stars: {{d.stars}}</p>
+                    <br>
+                    {% if d.review != "" %}
+                    <h5 class="text">"{{d.review}}"</h5>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                <br>
+                {% if data2 %}
+                <div class="col" style="border-radius: 15px;">
+                    <h3 class="text" style="text-decoration:underline; color: rgb(90, 43, 22);">Recipes
+                    </h3>
+                    {% for d2 in data2 %}
+                    <br><br>
+                    <button type="button" class="collapsible">{{d2.title}}</button>
+                    <p class="text"><i>
+                            Price Estimate: ${{d2.cost}}</i>
+                    </p>
+                    <div class="content">
+                        <h5 class="bigLabel">
+                            Ingredients</h5>
+                        <br><br>
+                        {% for ing in d2.ingredients %}
+                        <p class="text">{{ing}}
+                        </p>
+                        <br>
+                        {% endfor %}
+                        <br>
+                        <h5 class="bigLabel">
+                            Instructions</h5>
+                        <br><br>
+                        <p class="text">
+                            {{d2.instructions}}</p>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+        </form>
+        <!-- <div id="footer">
+        <h5 class="foot">Student Names: ({{ netid }})</h5>
+    </div> -->
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content1 = this.nextElementSibling;
+                    var content = content1.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </body>
+    <br><br><br><br><br>
+
+    <div class="footer">
+        {% if data %}
+        <p class="text">Student Names:
+            {{ netid }}</p>
+        {% else %}
+        <br><br><br><br><br><br><br>
+        <div class="text">Student
+            Names: {{ netid }}</div>
+        <br><br>
+        {% endif %}
+    </div>
+</div>
+
+</html>

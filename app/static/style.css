@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Font';
+  src: url('/static/fonts/font.ttf');
+}
+@font-face {
+  font-family: 'quicksand';
+  src: url('/static/fonts/quicksand.ttf');
+}
+@font-face {
+  font-family: 'quicksand_bold';
+  src: url('/static/fonts/quicksand_bold.ttf');
+}
+@font-face {
+  font-family: 'quicksand_med';
+  src: url('/static/fonts/quicksand_medium.ttf');
+}
+@font-face {
+  font-family: 'poppins';
+  src: url('/static/fonts/poppins.ttf');
+}
+@font-face {
+  font-family: 'mont';
+  src: url('/static/fonts/mont.ttf');
+}
+@font-face {
+  font-family: 'rubik';
+  src: url('/static/fonts/rubik.ttf');
+}
+body {
+  background: url('/static/img/food6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.text{
+  font-family: 'quicksand_bold';
+  color: rgb(255, 255, 255);
+}
+.bigLabel {
+  font-family: 'quicksand_bold';
+  color: rgb(90, 43, 22);
+  font-style: italic;
+  font-size: 16px;
+}
+#header2{
+  font-family: 'quicksand_bold';
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.btn{
+  background-color: rgb(206, 112, 69);
+  border-radius: 23 px;
+  border-color: rgb(206, 112, 69);
+}
+.btn:hover{
+  background-color: rgb(172, 77, 33);
+  border-radius: 23 px;
+  border-color: rgb(172, 77, 33);
+}
+.form-control {
+  border-radius: 10 px;
+  color: rgb(0, 0, 0);
+  font-family: 'quicksand_med';
+}
+.form-control:focus{
+  outline : none;
+}
+
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-family: 'quicksand_bold';
+  color: white;
+  outline: none;
+  font-size: 19px;
+  background-color: transparent;
+} 
+.content{
+  display: none;
+  overflow: hidden;
+  font-family: 'quicksand_bold';
+  color: rgb(255, 255, 255);
+}
+.active, .collapsible:hover {
+  font-size: 21px;
+  text-decoration: underline;
+}
+#row {
+  display: flex;
+}
+.col {
+  flex: 50%;
+  border: 10 px;
+  border-color: rgba(206, 112, 69, 0.7);
+  border-radius: 25 px;
+  margin-left: 6%;
+  margin-right: 6%;
+  height: 100%;
+  padding: 19px;
+  background: rgba(206, 112, 69, 0.7);
+  /* background-clip: content-box; */
+}
